@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanitary Napkin Custom Design</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fef8f8;
+        }
+        header {
+            background: linear-gradient(90deg, #ffd6e0, #ffe5ec);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        header nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            color: #555;
+        }
+        header nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+        }
+        .panel {
+            flex: 1;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .panel h2 {
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #555;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .form-group input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .recommendation {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px dashed #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+        .gallery {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .gallery-item {
+            text-align: center;
+        }
+        .gallery-item img {
+            width: 80px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .gallery-item button {
+            margin-top: 10px;
+            background-color: #ff6fa5;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .gallery-item button:hover {
+            background-color: #e0558b;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffd6e0;
+            margin-top: 20px;
+        }
+        footer button {
+            background-color: #ff6fa5;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        footer button:hover {
+            background-color: #e0558b;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Comfort Custom · CarePad</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">My Custom Records</a>
+            <a href="#">Help Center</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Left Panel -->
+        <div class="panel">
+            <h2>Basic Data Entry</h2>
+            <div class="form-group">
+                <label for="height">Height (cm)</label>
+                <input type="number" id="height" placeholder="Enter your height" oninput="updateRecommendation()">
+            </div>
+            <div class="form-group">
+                <label for="weight">Weight (kg)</label>
+                <input type="number" id="weight" placeholder="Enter your weight" oninput="updateRecommendation()">
+            </div>
+            <div class="form-group">
+                <label for="hip">Hip Circumference (cm)</label>
+                <input type="number" id="hip" placeholder="Enter your hip circumference" oninput="updateRecommendation()">
+            </div>
+            <div class="form-group">
+                <label for="pelvic">Pelvic Width (cm, optional)</label>
+                <input type="number" id="pelvic" placeholder="Enter your pelvic width" oninput="updateRecommendation()">
+            </div>
+            <div id="recommendation" class="recommendation">
+                Recommended size will appear here based on your input.
+            </div>
+        </div>
+
+        <!-- Center Panel -->
+        <div class="panel">
+            <h2>Visual Design Tools</h2>
+            <p>Design your sanitary napkin here:</p>
+            <div style="background: #f3f3f3; height: 200px; border: 1px dashed #ccc; border-radius: 10px;">
+                <p style="text-align: center; line-height: 200px; color: #aaa;">Canvas Area</p>
+            </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="panel">
+            <h2>Material and Formula Selection</h2>
+            <div class="form-group">
+                <label>Surface Material</label>
+                <select>
+                    <option>All Cotton</option>
+                    <option>Bamboo Fiber</option>
+                    <option>Smooth Non-Woven Fabric</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Absorption Layer</label>
+                <select>
+                    <option>Polymer Water Absorption</option>
+                    <option>Natural Cotton Core</option>
+                    <option>High Absorption Quick Dry</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Scent</label>
+                <select>
+                    <option>Odorless</option>
+                    <option>Lavender</option>
+                    <option>Chamomile</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Gallery Section -->
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/80?text=Mini+Pad" alt="Mini Pad">
+            <p>Mini Pads</p>
+            <button>Explore</button>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/80?text=Standard+Pad" alt="Standard Pad">
+            <p>Standard Pads</p>
+            <button>Explore</button>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/80?text=Night+Pad" alt="Night Pad">
+            <p>Night Pads</p>
+            <button>Explore</button>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/80?text=Tampon" alt="Tampon">
+            <p>Tampons</p>
+            <button>Explore</button>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/80?text=Sleep+Pants" alt="Sleep Pants">
+            <p>Sleep Pants</p>
+            <button>Explore</button>
+        </div>
+    </div>
+
+    <footer>
+        <button>Save Design</button>
+        <button>Order Now</button>
+    </footer>
+
+    <script>
+        function updateRecommendation() {
+            const height = document.getElementById('height').value;
+            const weight = document.getElementById('weight').value;
+            const hip = document.getElementById('hip').value;
+            const pelvic = document.getElementById('pelvic').value;
+            
+            let recommendation = "Recommended size will appear here based on your input.";
+            
+            if (height && weight && hip) {
+                if (height > 160 || weight > 60) {
+                    recommendation = "We recommend: Length 34cm (Night Mode), Wider rear wing.";
+                } else {
+                    recommendation = "We recommend: Length 28cm (Day Mode), Standard width.";
+                }
+            }
+            
+            document.getElementById('recommendation').innerText = recommendation;
+        }
+    </script>
+</body>
+</html>
